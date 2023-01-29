@@ -5,6 +5,10 @@ const {isAuth} = require('../controller/usuario')
 
 Routers.post('/addPelicula',addPeli)
 
+Routers.get('/hola',(req,res)=>{
+    res.json('hola mundo')
+})
+
 Routers.post('/ticket',isAuth,ticket)
 
 Routers.post('/allTicket',allTicket)

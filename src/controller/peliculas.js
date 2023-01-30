@@ -43,6 +43,15 @@ const addPeli = (req, res) => {
     })
 }
 
+const getPelis = async(req,res)=>{
+    try {
+        const results = await Pelicula.find()
+        return res.status(200).json(results)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const ticket = (req, res) => {
     const { pelicula, silla } = req.body
     const usuario = verifyJWT(req.headers.apkcine)
@@ -128,4 +137,4 @@ const allTicket = async (req, res) => {
     }
 }
 
-module.exports = { addPeli, ticket, allTicket, ticket2 }
+module.exports = { addPeli, ticket, allTicket, ticket2,getPelis }

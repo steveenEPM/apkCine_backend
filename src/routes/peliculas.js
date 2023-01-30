@@ -1,9 +1,11 @@
 const Routers = require('express').Router()
 
-const {addPeli,ticket,allTicket,ticket2} = require('../controller/peliculas')
+const {addPeli,ticket,allTicket,ticket2,getPelis} = require('../controller/peliculas')
 const {isAuth} = require('../controller/usuario')
 
 Routers.post('/addPelicula',addPeli)
+
+Routers.post('/getPelis',getPelis)
 
 Routers.get('/hola',(req,res)=>{
     res.json('hola mundo')
